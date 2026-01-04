@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Support – Business & Project Marketing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Our Support</h1>
+  <p>Hardware • Real Estate • Large Projects • Online Marketing</p>
+</header>
+
+<section class="form-section">
+  <h2>Submit Your Project / Order</h2>
+
+  <form id="orderForm">
+    <input type="text" placeholder="Your Name" required id="name">
+    <input type="text" placeholder="Phone / WhatsApp" required id="contact">
+    <input type="email" placeholder="Email (optional)" id="email">
+
+    <select id="category" required>
+      <option value="">Select Project Type</option>
+      <option>Hardware Supply</option>
+      <option>Real Estate</option>
+      <option>Construction Project</option>
+      <option>Industrial Equipment</option>
+      <option>Other Large Project</option>
+    </select>
+
+    <textarea placeholder="Project Details / Negotiation Notes" required id="details"></textarea>
+
+    <select id="courier">
+      <option>Courier Required</option>
+      <option>Local Courier</option>
+      <option>Online Courier Partner</option>
+      <option>Self Pickup</option>
+    </select>
+
+    <button type="submit">Send Request</button>
+  </form>
+
+  <p id="response"></p>
+</section>
+
+<footer>
+  <p>© 2026 Our Support | Marketing & Order Management</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

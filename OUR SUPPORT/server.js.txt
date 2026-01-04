@@ -1,0 +1,43 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const fs = require("fs");
+const cors = require("cors");
+
+const app = express();
+const PORT = 3000;
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
+const DATA_FILE = "orders.json";
+
+// Receive order
+app.post("/api/order", (req, res) => {
+  const newOrder = {
+    id: Date.now(),
+    ...req.body,
+    status: "Negotiation Pending"
+  };
+
+  const data = fs.existsSync(DATA_FILE)
+    ? JSON.parse(fs.readFileSync(DATA_FILE))
+    : [];
+
+  data.push(newOrder);
+  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+
+  res.json({ message: "Order received successfully", order: newOrder });
+});
+
+// View all orders (admin use)
+app.get("/api/orders", (req, res) => {
+  const data = fs.existsSync(DATA_FILE)
+    ? JSON.parse(fs.readFileSync(DATA_FILE))
+    : [];
+  res.json(data);
+});
+
+app.listen(PORT, () => {
+  console.log(`Our Support server running on http://localhost:${PORT}`);
+});

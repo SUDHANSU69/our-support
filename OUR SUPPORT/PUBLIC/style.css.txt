@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+}
+
+header {
+  background: #0a3d62;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.form-section {
+  background: white;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  background: #1e90ff;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background: #0c7cd5;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #555;
+}

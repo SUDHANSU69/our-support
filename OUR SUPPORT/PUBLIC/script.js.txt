@@ -1,0 +1,23 @@
+document.getElementById("orderForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const order = {
+    name: name.value,
+    contact: contact.value,
+    email: email.value,
+    category: category.value,
+    details: details.value,
+    courier: courier.value
+  };
+
+  const res = await fetch("/api/order", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(order)
+  });
+
+  const data = await res.json();
+  document.getElementById("response").innerText = data.message;
+
+  e.target.reset();
+});
