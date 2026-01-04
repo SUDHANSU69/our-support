@@ -1,7 +1,6 @@
 {
   "name": "our-support",
   "version": "1.0.0",
-  "description": "Order and marketing support platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
